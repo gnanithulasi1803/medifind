@@ -23,11 +23,17 @@ const CONFIG = {
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
   },
+
+  email: {
+    enabled: false,
+    gmail: process.env.GMAIL || "",
+    appPassword: process.env.GMAIL_PASS || ""
+  },
+
   server: {
     port: process.env.PORT || 3000
   }
 };
-
 // ════════════════════════════════════════════════════════
 //  DATABASE
 // ════════════════════════════════════════════════════════
