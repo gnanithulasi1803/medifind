@@ -20,8 +20,8 @@ const CONFIG = {
     host    : process.env.DB_HOST     || 'localhost',
     port    : parseInt(process.env.DB_PORT) || 3306,
     user    : process.env.DB_USER     || 'root',
-    password: process.env.DB_PASSWORD || 'Gnani@2005',
-    database: process.env.DB_NAME     || 'medifind_db'
+    password: process.env.DB_PASS || 'Gnani@2005',
+    database: process.env.DB_NAME || 'railway'
   },
   email: {
     enabled    : false,
