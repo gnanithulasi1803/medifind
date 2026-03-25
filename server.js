@@ -16,25 +16,19 @@ const nodemailer = require('nodemailer');
 // ════════════════════════════════════════════════════════
 
 const CONFIG = {
-  // MySQL – change password to yours
   db: {
-    host    : 'localhost',
-    port    : 3306,
-    user    : 'root',
-    password: 'Gnani@2005',       // ← YOUR MySQL password
-    database: 'medifind_db'
+    host    : process.env.DB_HOST     || 'localhost',
+    port    : parseInt(process.env.DB_PORT) || 3306,
+    user    : process.env.DB_USER     || 'root',
+    password: process.env.DB_PASSWORD || 'Gnani@2005',
+    database: process.env.DB_NAME     || 'medifind_db'
   },
-
-  // Gmail SMTP – use a Gmail account to send notifications
-  // Step 1: Go to Google Account → Security → 2-Step Verification → ON
-  // Step 2: Search "App Passwords" → Generate one → paste below
   email: {
-    enabled : false,         // ← set true after filling gmail + appPassword
-    gmail   : 'yourgmail@gmail.com',      // ← your Gmail address
-    appPassword: 'xxxx xxxx xxxx xxxx'    // ← 16-char App Password from Google
+    enabled    : false,
+    gmail      : process.env.GMAIL      || 'yourgmail@gmail.com',
+    appPassword: process.env.GMAIL_PASS || 'xxxx xxxx xxxx xxxx'
   },
-
-  server: { port: 3000 }
+  server: { port: process.env.PORT || 3000 }
 };
 
 // ════════════════════════════════════════════════════════
