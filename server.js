@@ -1,7 +1,7 @@
 // ══════════════════════════════════════════════════════════════
 //  MediFind v3  –  server.js
 //  Features: Cart, Order Management, Email Notifications
-//  Run: node server.js  |  Open: http://localhost:3000
+//  Run: node server.js  |  Open: http://localhost:5000
 // ══════════════════════════════════════════════════════════════
 
 const http = require("http");
@@ -32,7 +32,7 @@ const CONFIG = {
   },
 
   server: {
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || 5000,
   },
 };
 // ════════════════════════════════════════════════════════
