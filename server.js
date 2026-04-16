@@ -25,18 +25,16 @@ const CONFIG = {
     database: process.env.MYSQLDATABASE || "medifind_db",
   },
 
-  // Gmail SMTP – use a Gmail account to send notifications
-  // Step 1: Go to Google Account → Security → 2-Step Verification → ON
-  // Step 2: Search "App Passwords" → Generate one → paste below
   email: {
-    enabled: false, // ← set true after filling gmail + appPassword
-    gmail: "yourgmail@gmail.com", // ← your Gmail address
-    appPassword: "xxxx xxxx xxxx xxxx", // ← 16-char App Password from Google
+    enabled: false,
+    gmail: process.env.GMAIL || "",
+    appPassword: process.env.GMAIL_PASS || ""
   },
 
-  server: { port: 3000 },
+  server: {
+    port: process.env.PORT || 3000
+  }
 };
-
 // ════════════════════════════════════════════════════════
 //  DATABASE
 // ════════════════════════════════════════════════════════
