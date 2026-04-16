@@ -18,8 +18,8 @@ const nodemailer = require("nodemailer");
 const CONFIG = {
   // MySQL – read from environment variables (Railway provides these)
   db: {
-    host: process.env.MYSQLHOST || "localhost",
-    port: process.env.MYSQLPORT || 3306,
+    host: process.env.MYSQLHOST_PUBLIC || process.env.MYSQLHOST || "localhost",
+    port: process.env.MYSQLPORT_PUBLIC || process.env.MYSQLPORT || 3306,
     user: process.env.MYSQLUSER || "root",
     password: process.env.MYSQLPASSWORD || "Gnani@2005",
     database: process.env.MYSQLDATABASE || "medifind_db",
@@ -28,12 +28,12 @@ const CONFIG = {
   email: {
     enabled: false,
     gmail: process.env.GMAIL || "",
-    appPassword: process.env.GMAIL_PASS || ""
+    appPassword: process.env.GMAIL_PASS || "",
   },
 
   server: {
-    port: process.env.PORT || 3000
-  }
+    port: process.env.PORT || 3000,
+  },
 };
 // ════════════════════════════════════════════════════════
 //  DATABASE
